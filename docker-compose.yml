@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # Mock backend server (no AWS required)
+  mock-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python local_server_mock.py
+    ports:
+      - "5001:5001"
+    environment:
+      - ENVIRONMENT=dev
+      - USE_MOCK_BACKEND=true
+      - FLASK_ENV=development
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Streamlit frontend
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - ENVIRONMENT=dev
+      - USE_MOCK_BACKEND=true
+      - API_BASE_URL=http://mock-backend:5001
+      - STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=true
+      - STREAMLIT_SERVER_ENABLE_CORS=false
+    volumes:
+      - ./app.py:/app/app.py
+      - ./src:/app/src
+      - ./config:/app/config
+    depends_on:
+      mock-backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  default:
+    name: kitchen-agent-network

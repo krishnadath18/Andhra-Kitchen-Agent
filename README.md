@@ -6,10 +6,15 @@
 [![AWS](https://img.shields.io/badge/AWS-Bedrock%20%7C%20Lambda%20%7C%20DynamoDB-orange.svg)](https://aws.amazon.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Security](https://img.shields.io/badge/security-audited-brightgreen.svg)](docs/security/)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-blue.svg)](.github/workflows/ci.yml)
 
 ## Overview
 
 Andhra Kitchen Agent is an intelligent culinary assistant that leverages AWS Bedrock's Claude 3 models to provide personalized cooking guidance for Andhra Pradesh cuisine. The system combines computer vision, natural language processing, and real-time market data to deliver comprehensive meal planning solutions.
+
+## Screenshots
+
+> 📸 **Visual Documentation Coming Soon**: Screenshots and demo video will be added to showcase the UI and key features. For now, you can run the application locally using Docker (see Quick Start below) to explore the interface.
 
 ### Key Features
 
@@ -91,6 +96,21 @@ python local_server_mock.py
 streamlit run app.py
 ```
 
+### Docker Development (Recommended)
+
+The easiest way to get started without configuring AWS:
+
+```bash
+# Build and start all services
+docker-compose up
+
+# Access the application
+# Frontend: http://localhost:8501
+# Mock API: http://localhost:5001
+```
+
+This starts both the Streamlit frontend and mock backend in isolated containers.
+
 ### AWS Deployment
 
 For production deployment with all security features:
@@ -101,6 +121,8 @@ For production deployment with all security features:
 
 # See complete deployment guide
 ```
+
+> ⚠️ **Note**: The legacy `infrastructure/scripts/deploy.sh` script is deprecated. Use `deploy-api-gateway.sh` for secure Cognito-authenticated API deployment.
 
 📖 **Full deployment instructions**: [docs/security/DEPLOYMENT.md](docs/security/DEPLOYMENT.md)
 
@@ -187,9 +209,11 @@ pytest --cov=src --cov-report=html
 # Run specific test suite
 pytest tests/test_recipe_generator.py
 
-# Run integration tests
+# Run integration tests (requires AWS credentials)
 pytest tests/test_*_integration.py
 ```
+
+**Note on Test Coverage**: The test suite includes both unit tests (no AWS required) and integration tests (require AWS credentials). The CI pipeline runs unit tests automatically on every push. Some integration tests may require manual setup of AWS resources and are excluded from automated CI runs.
 
 ## Performance
 
@@ -206,7 +230,9 @@ Designed for AWS Free Tier compliance:
 - S3: < 100MB with 24-hour lifecycle (within 5GB free tier)
 - Bedrock: Pay-per-use (Claude 3 Haiku optimized for cost)
 
-**Estimated Monthly Cost**: $5-10 beyond free tier
+> ⚠️ **IMPORTANT**: AWS Bedrock is **NOT included in the AWS Free Tier**. Bedrock charges per token (input/output) and can incur significant costs depending on usage. Claude 3 Haiku is the most cost-effective model, but monitor your usage carefully. See [AWS Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/) for details.
+
+**Estimated Monthly Cost**: $5-10 beyond free tier (primarily Bedrock usage)
 
 ## Roadmap
 

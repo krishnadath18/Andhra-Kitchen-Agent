@@ -10,6 +10,22 @@ Get the Andhra Kitchen Agent running in 5 minutes.
 
 ## Local Development (No AWS Required)
 
+### Option 1: Docker (Recommended - Easiest)
+
+```bash
+git clone https://github.com/krishnadath18/Andhra-Kitchen-Agent.git
+cd Andhra-Kitchen-Agent
+
+# Start with Docker Compose
+docker-compose up
+
+# Access at http://localhost:8501
+```
+
+See [DOCKER_SETUP.md](DOCKER_SETUP.md) for detailed Docker instructions.
+
+### Option 2: Manual Setup
+
 ### 1. Clone and Setup
 
 ```bash
@@ -47,6 +63,8 @@ aws configure
 ```
 
 ### 2. Enable Bedrock Models
+
+> ⚠️ **COST WARNING**: AWS Bedrock is **NOT included in the AWS Free Tier**. You will be charged per token for all API calls. Monitor your usage to avoid unexpected charges. See [AWS Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/).
 
 1. Go to AWS Console → Bedrock → Model access
 2. Enable: Claude 3 Haiku, Claude 3 Sonnet

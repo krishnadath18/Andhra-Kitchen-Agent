@@ -1,5 +1,14 @@
 #!/bin/bash
 
+## ⚠️ DEPRECATED — DO NOT USE
+##
+## This script is deprecated and references legacy infrastructure that may not work correctly.
+## 
+## SECURE ALTERNATIVE: Use infrastructure/scripts/deploy-api-gateway.sh for the
+## authenticated API surface deployed from api-gateway-fixed.yaml.
+##
+## This file is kept for reference only and will be removed in a future release.
+
 # Main Deployment Script for Andhra Kitchen Agent
 # This script orchestrates the deployment of all AWS infrastructure components
 # WARNING: This script still references the legacy main-stack flow.
