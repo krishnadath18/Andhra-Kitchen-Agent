@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://andhra-kitchen-agent.example.com/schemas/inventory.json",
+  "title": "Inventory",
+  "description": "Detected ingredients from kitchen images with quantities and confidence scores",
+  "type": "object",
+  "required": ["total_items", "detection_timestamp", "ingredients"],
+  "properties": {
+    "total_items": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total count of detected ingredients"
+    },
+    "detection_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of detection"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^sess_[a-zA-Z0-9_]+$",
+      "description": "User session identifier"
+    },
+    "image_id": {
+      "type": "string",
+      "pattern": "^img_[a-zA-Z0-9_]+$",
+      "description": "Unique image identifier"
+    },
+    "ingredients": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["ingredient_name", "quantity", "unit", "confidence_score"],
+        "properties": {
+          "ingredient_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "English name of ingredient (e.g., brinjal, gongura, curry_leaves)",
+            "examples": [
+              "brinjal",
+              "gongura",
+              "curry_leaves",
+              "tamarind",
+              "rice",
+              "toor_dal",
+              "chana_dal",
+              "urad_dal",
+              "green_chili",
+              "red_chili",
+              "turmeric",
+              "coriander_powder",
+              "cumin_seeds",
+              "mustard_seeds",
+              "fenugreek_seeds",
+              "asafoetida",
+              "coconut",
+              "jaggery",
+              "sesame_seeds",
+              "peanuts",
+              "tomato",
+              "onion",
+              "garlic",
+              "ginger",
+              "drumstick",
+              "ridge_gourd",
+              "bottle_gourd",
+              "okra",
+              "potato",
+              "carrot"
+            ]
+          },
+          "ingredient_name_telugu": {
+            "type": "string",
+            "description": "Telugu name of ingredient (optional)",
+            "examples": [
+              "వంకాయ",
+              "గోంగూర",
+              "కరివేపాకు",
+              "చింతపండు",
+              "బియ్యం",
+              "కందిపప్పు",
+              "శనగపప్పు",
+              "మినుములు",
+              "పచ్చిమిర్చి",
+              "ఎండుమిర్చి"
+            ]
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Estimated quantity"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "kg",
+              "grams",
+              "pieces",
+              "bunches",
+              "liters",
+              "ml",
+              "cups",
+              "tablespoons",
+              "teaspoons",
+              "handfuls"
+            ],
+            "description": "Unit of measurement"
+          },
+          "confidence_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Detection confidence (0-1). High: >=0.7, Medium: 0.5-0.7, Low: <0.5"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "vegetable",
+              "fruit",
+              "grain",
+              "pulse",
+              "spice",
+              "dairy",
+              "meat",
+              "leafy_green",
+              "condiment",
+              "sweetener",
+              "oil",
+              "other"
+            ],
+            "description": "Ingredient category"
+          },
+          "freshness": {
+            "type": "string",
+            "enum": ["fresh", "good", "moderate", "poor", "unknown"],
+            "description": "Visual freshness assessment (optional)"
+          },
+          "storage_location": {
+            "type": "string",
+            "enum": ["fridge", "pantry", "freezer", "counter", "unknown"],
+            "description": "Detected storage location (optional)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "detection_metadata": {
+      "type": "object",
+      "properties": {
+        "model_version": {
+          "type": "string",
+          "description": "Bedrock model version used"
+        },
+        "processing_time_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Processing time in milliseconds"
+        },
+        "image_quality": {
+          "type": "string",
+          "enum": ["excellent", "good", "fair", "poor"],
+          "description": "Image quality assessment"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

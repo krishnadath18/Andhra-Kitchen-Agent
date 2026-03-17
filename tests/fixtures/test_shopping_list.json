@@ -1,0 +1,135 @@
+{
+  "list_id": "list_test_001",
+  "recipe_id": "recipe_vankaya_gongura_curry_001",
+  "recipe_name": "Brinjal Gongura Curry",
+  "session_id": "sess_test123",
+  "created_at": "2024-01-15T10:40:00Z",
+  "items": [
+    {
+      "ingredient_name": "mustard_seeds",
+      "ingredient_name_telugu": "ఆవాలు",
+      "quantity": 1,
+      "unit": "teaspoons",
+      "estimated_price": 5,
+      "market_section": "spices",
+      "optimized_quantity": 50,
+      "optimized_unit": "grams",
+      "optimized_price": 15,
+      "price_source": "Rythu Bazaar Vijayawada",
+      "price_last_updated": "2024-01-10T00:00:00Z",
+      "price_confidence": "current",
+      "availability": "available",
+      "checked": false,
+      "notes": "Buy whole seeds for better flavor"
+    },
+    {
+      "ingredient_name": "turmeric",
+      "ingredient_name_telugu": "పసుపు",
+      "quantity": 0.5,
+      "unit": "teaspoons",
+      "estimated_price": 3,
+      "market_section": "spices",
+      "optimized_quantity": 100,
+      "optimized_unit": "grams",
+      "optimized_price": 40,
+      "price_source": "Gandhi Nagar Market",
+      "price_last_updated": "2024-01-12T00:00:00Z",
+      "price_confidence": "current",
+      "availability": "available",
+      "checked": false
+    },
+    {
+      "ingredient_name": "red_chili_powder",
+      "ingredient_name_telugu": "ఎండుమిర్చి పొడి",
+      "quantity": 1,
+      "unit": "teaspoons",
+      "estimated_price": 8,
+      "market_section": "spices",
+      "optimized_quantity": 100,
+      "optimized_unit": "grams",
+      "optimized_price": 60,
+      "price_source": "Rythu Bazaar Vijayawada",
+      "price_last_updated": "2024-01-10T00:00:00Z",
+      "price_confidence": "current",
+      "availability": "available",
+      "checked": false,
+      "notes": "Guntur variety recommended for authentic taste"
+    },
+    {
+      "ingredient_name": "oil",
+      "ingredient_name_telugu": "నూనె",
+      "quantity": 2,
+      "unit": "tablespoons",
+      "estimated_price": 10,
+      "market_section": "condiments",
+      "optimized_quantity": 1,
+      "optimized_unit": "liters",
+      "optimized_price": 180,
+      "price_source": "Gandhi Nagar Market",
+      "price_last_updated": "2024-01-14T00:00:00Z",
+      "price_confidence": "current",
+      "availability": "available",
+      "checked": false,
+      "notes": "Sunflower or groundnut oil works well"
+    }
+  ],
+  "total_cost": 26,
+  "optimized_total_cost": 295,
+  "grouped_by_section": {
+    "spices": [
+      {
+        "ingredient_name": "mustard_seeds",
+        "quantity": 50,
+        "unit": "grams",
+        "price": 15
+      },
+      {
+        "ingredient_name": "turmeric",
+        "quantity": 100,
+        "unit": "grams",
+        "price": 40
+      },
+      {
+        "ingredient_name": "red_chili_powder",
+        "quantity": 100,
+        "unit": "grams",
+        "price": 60
+      }
+    ],
+    "condiments": [
+      {
+        "ingredient_name": "oil",
+        "quantity": 1,
+        "unit": "liters",
+        "price": 180
+      }
+    ]
+  },
+  "recommended_markets": [
+    {
+      "market_name": "Rythu Bazaar Vijayawada",
+      "location": "Near Benz Circle, Vijayawada",
+      "best_for": ["vegetables", "fruits", "spices"],
+      "best_days": ["wednesday", "saturday", "sunday"]
+    },
+    {
+      "market_name": "Gandhi Nagar Market",
+      "location": "Gandhi Nagar, Vijayawada",
+      "best_for": ["spices", "grains", "condiments"],
+      "best_days": ["tuesday", "friday"]
+    }
+  ],
+  "savings_tips": [
+    "Buy curry leaves on Wednesday at Rythu Bazaar for best prices (₹10/bunch vs ₹20)",
+    "Purchase spices in bulk (100g or more) for better rates",
+    "Visit Rythu Bazaar early morning (6-8 AM) for freshest produce"
+  ],
+  "reminders": [
+    {
+      "reminder_id": "reminder_curry_leaves_001",
+      "content": "Buy fresh curry leaves tomorrow",
+      "reason": "Best prices on Wednesday at Rythu Bazaar",
+      "trigger_time": "2024-01-16T18:00:00Z"
+    }
+  ]
+}

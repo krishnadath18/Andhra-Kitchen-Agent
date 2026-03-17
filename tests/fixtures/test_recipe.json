@@ -1,0 +1,154 @@
+{
+  "recipe_id": "recipe_vankaya_gongura_curry_001",
+  "name": "Brinjal Gongura Curry",
+  "name_english": "Brinjal Gongura Curry",
+  "name_telugu": "వంకాయ గోంగూర కూర",
+  "description": "Traditional Andhra-style brinjal curry with tangy gongura leaves",
+  "prep_time": 10,
+  "cook_time": 20,
+  "total_time": 30,
+  "servings": 4,
+  "difficulty": "easy",
+  "ingredients": [
+    {
+      "name": "brinjal",
+      "name_telugu": "వంకాయ",
+      "quantity": 4,
+      "unit": "pieces"
+    },
+    {
+      "name": "gongura",
+      "name_telugu": "గోంగూర",
+      "quantity": 1,
+      "unit": "bunches"
+    },
+    {
+      "name": "curry_leaves",
+      "name_telugu": "కరివేపాకు",
+      "quantity": 10,
+      "unit": "pieces"
+    },
+    {
+      "name": "tamarind",
+      "name_telugu": "చింతపండు",
+      "quantity": 50,
+      "unit": "grams"
+    },
+    {
+      "name": "oil",
+      "name_telugu": "నూనె",
+      "quantity": 2,
+      "unit": "tablespoons"
+    },
+    {
+      "name": "mustard_seeds",
+      "name_telugu": "ఆవాలు",
+      "quantity": 1,
+      "unit": "teaspoons"
+    },
+    {
+      "name": "turmeric",
+      "name_telugu": "పసుపు",
+      "quantity": 0.5,
+      "unit": "teaspoons"
+    },
+    {
+      "name": "red_chili_powder",
+      "name_telugu": "ఎండుమిర్చి పొడి",
+      "quantity": 1,
+      "unit": "teaspoons"
+    },
+    {
+      "name": "salt",
+      "name_telugu": "ఉప్పు",
+      "quantity": 1,
+      "unit": "teaspoons"
+    }
+  ],
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Cut brinjals into medium pieces and soak in water to prevent browning",
+      "instruction_telugu": "వంకాయలను మధ్యస్థ ముక్కలుగా కోసి నీటిలో ముంచండి",
+      "duration": 5
+    },
+    {
+      "step_number": 2,
+      "instruction": "Wash and chop gongura leaves finely",
+      "instruction_telugu": "గోంగూర ఆకులను కడిగి చక్కగా కోయండి",
+      "duration": 3
+    },
+    {
+      "step_number": 3,
+      "instruction": "Heat oil in a pan and add mustard seeds. When they splutter, add curry leaves",
+      "instruction_telugu": "పాన్‌లో నూనె వేడి చేసి ఆవాలు వేయండి. అవి పగిలినప్పుడు కరివేపాకు వేయండి",
+      "duration": 2,
+      "temperature": "medium heat"
+    },
+    {
+      "step_number": 4,
+      "instruction": "Add turmeric and red chili powder, stir briefly",
+      "instruction_telugu": "పసుపు మరియు ఎండుమిర్చి పొడి వేసి కొద్దిగా కలపండి",
+      "duration": 1
+    },
+    {
+      "step_number": 5,
+      "instruction": "Add brinjal pieces and sauté for 5 minutes until slightly softened",
+      "instruction_telugu": "వంకాయ ముక్కలు వేసి 5 నిమిషాలు వేయించండి",
+      "duration": 5
+    },
+    {
+      "step_number": 6,
+      "instruction": "Add gongura leaves, tamarind paste, salt, and 1 cup water",
+      "instruction_telugu": "గోంగూర ఆకులు, చింతపండు పేస్ట్, ఉప్పు మరియు 1 కప్పు నీరు వేయండి",
+      "duration": 2
+    },
+    {
+      "step_number": 7,
+      "instruction": "Cover and cook on medium heat until brinjals are tender (about 10 minutes)",
+      "instruction_telugu": "మూత పెట్టి మధ్యస్థ వేడిపై వంకాయలు మెత్తబడే వరకు ఉడికించండి (సుమారు 10 నిమిషాలు)",
+      "duration": 10,
+      "temperature": "medium heat",
+      "tip": "Stir occasionally to prevent sticking"
+    },
+    {
+      "step_number": 8,
+      "instruction": "Serve hot with rice or roti",
+      "instruction_telugu": "వేడిగా అన్నం లేదా రోటీతో వడ్డించండి"
+    }
+  ],
+  "nutrition": {
+    "calories": 135,
+    "protein": 3.2,
+    "carbohydrates": 18,
+    "fat": 7,
+    "fiber": 5.5,
+    "sodium": 580,
+    "sugar": 4,
+    "accuracy_margin": "±10%"
+  },
+  "estimated_cost": 45,
+  "cost_per_serving": 11.25,
+  "cooking_method": "sauteing",
+  "oil_quantity": 0.5,
+  "spice_level": "medium",
+  "tags": [
+    "low-oil",
+    "vegetarian",
+    "traditional",
+    "andhra-style",
+    "quick"
+  ],
+  "allergen_info": [],
+  "dietary_info": [
+    "vegetarian",
+    "vegan",
+    "gluten-free",
+    "dairy-free"
+  ],
+  "region": "coastal_andhra",
+  "festival": "none",
+  "health_benefits": "Low in oil, high in fiber. Gongura is rich in iron and vitamins. Brinjal provides antioxidants.",
+  "created_at": "2024-01-15T10:35:00Z",
+  "session_id": "sess_test123"
+}

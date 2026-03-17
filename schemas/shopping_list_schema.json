@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://andhra-kitchen-agent.example.com/schemas/shopping_list.json",
+  "title": "ShoppingList",
+  "description": "Optimized shopping list with Vijayawada market prices",
+  "type": "object",
+  "required": ["list_id", "recipe_id", "items", "total_cost"],
+  "properties": {
+    "list_id": {
+      "type": "string",
+      "pattern": "^list_[a-zA-Z0-9_]+$",
+      "description": "Unique shopping list identifier"
+    },
+    "recipe_id": {
+      "type": "string",
+      "pattern": "^recipe_[a-zA-Z0-9_]+$",
+      "description": "Associated recipe identifier"
+    },
+    "recipe_name": {
+      "type": "string",
+      "description": "Recipe name for reference"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^sess_[a-zA-Z0-9_]+$",
+      "description": "User session identifier"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Shopping list creation timestamp"
+    },
+    "items": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["ingredient_name", "quantity", "unit", "estimated_price"],
+        "properties": {
+          "ingredient_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Ingredient name"
+          },
+          "ingredient_name_telugu": {
+            "type": "string",
+            "description": "Ingredient name in Telugu"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Required quantity"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit of measurement"
+          },
+          "estimated_price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Estimated price in INR"
+          },
+          "market_section": {
+            "type": "string",
+            "enum": [
+              "vegetables",
+              "fruits",
+              "grains",
+              "pulses",
+              "spices",
+              "dairy",
+              "meat",
+              "condiments",
+              "other"
+            ],
+            "description": "Market section for organization"
+          },
+          "optimized_quantity": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Suggested quantity to minimize waste (e.g., round to 250g, 500g, 1kg)"
+          },
+          "optimized_unit": {
+            "type": "string",
+            "description": "Suggested unit for optimized quantity"
+          },
+          "optimized_price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Price for optimized quantity"
+          },
+          "price_source": {
+            "type": "string",
+            "description": "Market name where price was sourced (e.g., Rythu Bazaar, Gandhi Nagar Market)"
+          },
+          "price_last_updated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When price was last updated"
+          },
+          "price_confidence": {
+            "type": "string",
+            "enum": ["current", "recent", "outdated", "estimated"],
+            "description": "Price data freshness"
+          },
+          "availability": {
+            "type": "string",
+            "enum": ["in_season", "available", "limited", "out_of_season", "unknown"],
+            "description": "Ingredient availability"
+          },
+          "checked": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether item has been purchased"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes (e.g., 'Buy fresh', 'Check quality')"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "total_cost": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total estimated cost in INR"
+    },
+    "optimized_total_cost": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total cost with optimized quantities"
+    },
+    "grouped_by_section": {
+      "type": "object",
+      "description": "Items grouped by market section for easier shopping",
+      "patternProperties": {
+        "^(vegetables|fruits|grains|pulses|spices|dairy|meat|condiments|other)$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ingredient_name": {"type": "string"},
+              "quantity": {"type": "number"},
+              "unit": {"type": "string"},
+              "price": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "recommended_markets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "market_name": {
+            "type": "string",
+            "description": "Market name (e.g., Rythu Bazaar, Gandhi Nagar Market, Benz Circle Market)"
+          },
+          "location": {
+            "type": "string",
+            "description": "Market location in Vijayawada"
+          },
+          "best_for": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Categories this market is best for"
+          },
+          "best_days": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+            },
+            "description": "Best days to visit for fresh produce/good prices"
+          }
+        }
+      },
+      "description": "Recommended markets for this shopping list"
+    },
+    "savings_tips": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Tips to save money (e.g., 'Buy curry leaves on Wednesday for best prices')"
+    },
+    "reminders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reminder_id": {"type": "string"},
+          "content": {"type": "string"},
+          "reason": {"type": "string"},
+          "trigger_time": {"type": "string", "format": "date-time"}
+        }
+      },
+      "description": "Associated reminders for price-sensitive items"
+    }
+  },
+  "additionalProperties": false
+}

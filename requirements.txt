@@ -1,0 +1,36 @@
+# Andhra Kitchen Agent - Python Dependencies
+
+# Core Dependencies
+boto3>=1.34.0                  # AWS SDK for Python
+jsonschema>=4.20.0             # JSON Schema validation
+python-dotenv>=1.0.0           # Environment variable management
+PyJWT[crypto]>=2.8.0           # Cognito JWT validation
+python-multipart>=0.0.9        # Multipart form-data parsing helpers
+
+# Web Framework
+streamlit>=1.29.0              # Frontend web application
+
+# Testing
+pytest>=7.4.0                  # Testing framework
+pytest-cov>=4.1.0              # Test coverage
+hypothesis>=6.92.0             # Property-based testing
+
+# AWS Services (included in boto3)
+# - DynamoDB
+# - S3
+# - Lambda
+# - Bedrock
+# - EventBridge
+# - CloudWatch
+
+# Development Tools
+black>=23.12.0                 # Code formatter
+flake8>=7.0.0                  # Linter
+mypy>=1.7.0                    # Type checker
+
+# Optional: For local development
+moto>=4.2.0                    # AWS service mocking for tests
+
+# Local Development Server
+flask>=3.0.0                   # Local API server
+flask-cors>=4.0.0              # CORS support for Streamlit

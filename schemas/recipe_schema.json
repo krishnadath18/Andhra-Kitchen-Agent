@@ -1,0 +1,291 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://andhra-kitchen-agent.example.com/schemas/recipe.json",
+  "title": "Recipe",
+  "description": "Andhra-style recipe with ingredients, steps, and nutrition information",
+  "type": "object",
+  "required": ["recipe_id", "name", "ingredients", "steps", "prep_time", "servings", "nutrition"],
+  "properties": {
+    "recipe_id": {
+      "type": "string",
+      "pattern": "^recipe_[a-zA-Z0-9_]+$",
+      "description": "Unique recipe identifier"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Recipe name in selected language"
+    },
+    "name_english": {
+      "type": "string",
+      "description": "Recipe name in English"
+    },
+    "name_telugu": {
+      "type": "string",
+      "description": "Recipe name in Telugu (e.g., వంకాయ కూర)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief recipe description"
+    },
+    "prep_time": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Preparation time in minutes"
+    },
+    "cook_time": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Cooking time in minutes"
+    },
+    "total_time": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total time in minutes (prep + cook)"
+    },
+    "servings": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of servings"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"],
+      "description": "Recipe difficulty level"
+    },
+    "ingredients": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "quantity", "unit"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Ingredient name"
+          },
+          "name_telugu": {
+            "type": "string",
+            "description": "Ingredient name in Telugu"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Ingredient quantity"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit of measurement"
+          },
+          "optional": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether ingredient is optional"
+          },
+          "substitute": {
+            "type": "string",
+            "description": "Possible substitute ingredient"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step_number", "instruction"],
+        "properties": {
+          "step_number": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Step sequence number"
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Step instruction in selected language"
+          },
+          "instruction_telugu": {
+            "type": "string",
+            "description": "Step instruction in Telugu"
+          },
+          "duration": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Step duration in minutes (optional)"
+          },
+          "temperature": {
+            "type": "string",
+            "description": "Cooking temperature (e.g., medium heat, 180°C)"
+          },
+          "tip": {
+            "type": "string",
+            "description": "Helpful tip for this step"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nutrition": {
+      "type": "object",
+      "required": ["calories", "protein", "carbohydrates", "fat"],
+      "properties": {
+        "calories": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Calories per serving"
+        },
+        "protein": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Protein in grams per serving"
+        },
+        "carbohydrates": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Carbohydrates in grams per serving"
+        },
+        "fat": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Fat in grams per serving"
+        },
+        "fiber": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Fiber in grams per serving"
+        },
+        "sodium": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Sodium in milligrams per serving"
+        },
+        "sugar": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Sugar in grams per serving"
+        },
+        "accuracy_margin": {
+          "type": "string",
+          "default": "±10%",
+          "description": "Nutrition accuracy margin"
+        }
+      },
+      "additionalProperties": false
+    },
+    "estimated_cost": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Estimated cost in INR for all servings"
+    },
+    "cost_per_serving": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Cost in INR per serving"
+    },
+    "cooking_method": {
+      "type": "string",
+      "enum": [
+        "steaming",
+        "boiling",
+        "frying",
+        "deep_frying",
+        "shallow_frying",
+        "grilling",
+        "baking",
+        "roasting",
+        "pressure_cooking",
+        "sauteing",
+        "stir_frying",
+        "air_frying",
+        "slow_cooking"
+      ],
+      "description": "Primary cooking method"
+    },
+    "oil_quantity": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Oil in tablespoons per serving"
+    },
+    "spice_level": {
+      "type": "string",
+      "enum": ["mild", "medium", "hot", "very_hot"],
+      "description": "Spice level"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recipe tags (e.g., low-oil, festival, quick, vegetarian, vegan, gluten-free)",
+      "examples": [
+        ["low-oil", "vegetarian", "quick"],
+        ["festival", "sankranti", "traditional"],
+        ["high-protein", "gluten-free"]
+      ]
+    },
+    "allergen_info": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "peanuts",
+          "tree_nuts",
+          "dairy",
+          "eggs",
+          "soy",
+          "wheat",
+          "gluten",
+          "shellfish",
+          "fish",
+          "sesame"
+        ]
+      },
+      "description": "List of common allergens present"
+    },
+    "dietary_info": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "vegetarian",
+          "vegan",
+          "gluten-free",
+          "dairy-free",
+          "nut-free",
+          "low-carb",
+          "high-protein",
+          "low-sodium"
+        ]
+      },
+      "description": "Dietary classifications"
+    },
+    "region": {
+      "type": "string",
+      "enum": ["coastal_andhra", "rayalaseema", "telangana", "general_andhra"],
+      "description": "Andhra region specialty"
+    },
+    "festival": {
+      "type": "string",
+      "enum": ["sankranti", "ugadi", "dasara", "deepavali", "none"],
+      "description": "Associated festival (if any)"
+    },
+    "health_benefits": {
+      "type": "string",
+      "description": "Health benefits description (especially for low-oil recipes)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Recipe creation timestamp"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Session that generated this recipe"
+    }
+  },
+  "additionalProperties": false
+}

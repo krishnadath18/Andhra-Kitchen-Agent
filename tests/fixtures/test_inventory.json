@@ -1,0 +1,90 @@
+{
+  "total_items": 8,
+  "detection_timestamp": "2024-01-15T10:30:00Z",
+  "session_id": "sess_test123",
+  "image_id": "img_brinjal_photo_001",
+  "ingredients": [
+    {
+      "ingredient_name": "brinjal",
+      "ingredient_name_telugu": "వంకాయ",
+      "quantity": 4,
+      "unit": "pieces",
+      "confidence_score": 0.92,
+      "category": "vegetable",
+      "freshness": "fresh",
+      "storage_location": "counter"
+    },
+    {
+      "ingredient_name": "gongura",
+      "ingredient_name_telugu": "గోంగూర",
+      "quantity": 1,
+      "unit": "bunches",
+      "confidence_score": 0.88,
+      "category": "leafy_green",
+      "freshness": "fresh",
+      "storage_location": "fridge"
+    },
+    {
+      "ingredient_name": "curry_leaves",
+      "ingredient_name_telugu": "కరివేపాకు",
+      "quantity": 1,
+      "unit": "bunches",
+      "confidence_score": 0.95,
+      "category": "spice",
+      "freshness": "fresh",
+      "storage_location": "fridge"
+    },
+    {
+      "ingredient_name": "tamarind",
+      "ingredient_name_telugu": "చింతపండు",
+      "quantity": 150,
+      "unit": "grams",
+      "confidence_score": 0.78,
+      "category": "condiment",
+      "storage_location": "pantry"
+    },
+    {
+      "ingredient_name": "rice",
+      "ingredient_name_telugu": "బియ్యం",
+      "quantity": 2,
+      "unit": "kg",
+      "confidence_score": 0.96,
+      "category": "grain",
+      "storage_location": "pantry"
+    },
+    {
+      "ingredient_name": "toor_dal",
+      "ingredient_name_telugu": "కందిపప్పు",
+      "quantity": 500,
+      "unit": "grams",
+      "confidence_score": 0.89,
+      "category": "pulse",
+      "storage_location": "pantry"
+    },
+    {
+      "ingredient_name": "green_chili",
+      "ingredient_name_telugu": "పచ్చిమిర్చి",
+      "quantity": 10,
+      "unit": "pieces",
+      "confidence_score": 0.85,
+      "category": "spice",
+      "freshness": "fresh",
+      "storage_location": "fridge"
+    },
+    {
+      "ingredient_name": "tomato",
+      "ingredient_name_telugu": "టమాటో",
+      "quantity": 5,
+      "unit": "pieces",
+      "confidence_score": 0.91,
+      "category": "vegetable",
+      "freshness": "good",
+      "storage_location": "counter"
+    }
+  ],
+  "detection_metadata": {
+    "model_version": "anthropic.claude-3-sonnet-20240229-v1:0",
+    "processing_time_ms": 8500,
+    "image_quality": "good"
+  }
+}

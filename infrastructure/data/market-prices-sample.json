@@ -1,0 +1,434 @@
+[
+  {
+    "ingredient_name": "brinjal",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 40,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "brinjal",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 45,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "curry_leaves",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 10,
+    "unit": "bunch",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "curry_leaves",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 12,
+    "unit": "bunch",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "rice",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 50,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "rice",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 52,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "tamarind",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 150,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "tamarind",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 160,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "tomato",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 30,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "tomato",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 35,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "onion",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 25,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "onion",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 28,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "potato",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 20,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "potato",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 22,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "gongura",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 15,
+    "unit": "bunch",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "gongura",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 18,
+    "unit": "bunch",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "toor_dal",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 120,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "toor_dal",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 125,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "mustard_seeds",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 100,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "mustard_seeds",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 105,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "turmeric",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 200,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "turmeric",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 210,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "red_chili_powder",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 180,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "red_chili_powder",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 190,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "coriander_powder",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 150,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "coriander_powder",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 160,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "oil",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 150,
+    "unit": "liter",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "oil",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 155,
+    "unit": "liter",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "jaggery",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 80,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "jaggery",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 85,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "sesame_seeds",
+    "market_name": "vijayawada_gandhi_nagar",
+    "price_per_unit": 250,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "sesame_seeds",
+    "market_name": "vijayawada_benz_circle",
+    "price_per_unit": 260,
+    "unit": "kg",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "source": "manual",
+    "confidence": 1.0
+  },
+  {
+    "ingredient_name": "gongura",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 30,
+    "unit": "bunches",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "gongura",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 35,
+    "unit": "bunches",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "drumstick",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 60,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "drumstick",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 70,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "ridge_gourd",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 35,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "ridge_gourd",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 40,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "bottle_gourd",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 25,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "bottle_gourd",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 30,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "okra",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 50,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "okra",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 55,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "jaggery",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 80,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "jaggery",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 85,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "sesame_seeds",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 150,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "sesame_seeds",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 160,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "peanuts",
+    "market_name": "rythu_bazaar_vijayawada",
+    "price_per_unit": 120,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  },
+  {
+    "ingredient_name": "peanuts",
+    "market_name": "gandhi_nagar_market",
+    "price_per_unit": 130,
+    "unit": "kg",
+    "last_updated": "2024-01-10T00:00:00Z",
+    "source": "manual",
+    "confidence": 0.95
+  }
+]

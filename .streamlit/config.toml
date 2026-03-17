@@ -1,0 +1,89 @@
+# Streamlit Configuration for Andhra Kitchen Agent
+# Security-focused configuration for production deployment
+
+[server]
+# SECURITY: Enable XSRF protection to prevent cross-site request forgery
+enableXsrfProtection = true
+
+# SECURITY: Disable CORS in production (API handles CORS)
+enableCORS = false
+
+# SECURITY: Set cookie secret for session management
+# WARNING: Generate a secure random string for production
+# Example: python -c "import secrets; print(secrets.token_hex(32))"
+# cookieSecret = "your-secure-random-string-here"
+
+# Server address (set to your domain in production)
+# headless = true  # Uncomment for production deployment
+
+# Port configuration
+port = 8501
+
+# Maximum upload size (10MB for images)
+maxUploadSize = 10
+
+# Enable WebSocket compression
+enableWebsocketCompression = true
+
+[browser]
+# Server address for browser (set to your domain in production)
+# serverAddress = "yourdomain.com"
+# serverPort = 443  # HTTPS port
+
+# Gather usage stats (disable in production for privacy)
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#E8890C"
+backgroundColor = "#0F0E0A"
+secondaryBackgroundColor = "#1A1814"
+textColor = "#F5ECD7"
+font = "sans serif"
+
+[client]
+# Show error details (disable in production)
+showErrorDetails = false
+
+# Toolbar mode
+toolbarMode = "minimal"
+
+[runner]
+# Faster script runs
+fastReruns = true
+
+# Magic enabled
+magicEnabled = true
+
+[logger]
+# Log level (INFO for production, DEBUG for development)
+level = "INFO"
+
+# Message format
+messageFormat = "%(asctime)s %(levelname)s: %(message)s"
+
+# ============================================================================
+# PRODUCTION DEPLOYMENT NOTES
+# ============================================================================
+#
+# 1. Generate secure cookie secret:
+#    python -c "import secrets; print(secrets.token_hex(32))"
+#
+# 2. Set server address to your domain:
+#    [server]
+#    headless = true
+#    
+#    [browser]
+#    serverAddress = "yourdomain.com"
+#    serverPort = 443
+#
+# 3. Disable error details:
+#    [client]
+#    showErrorDetails = false
+#
+# 4. Set environment variables:
+#    export ENVIRONMENT=prod
+#    export STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=true
+#
+# 5. Deploy behind HTTPS reverse proxy (nginx, CloudFront, etc.)
+#
+# ============================================================================
