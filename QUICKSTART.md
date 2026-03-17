@@ -1,127 +1,108 @@
-# Andhra Kitchen Agent - Quick Start Guide
+# Quick Start Guide
 
-Get up and running with the Andhra Kitchen Agent in 5 minutes!
+Get the Andhra Kitchen Agent running in 5 minutes.
 
 ## Prerequisites
 
 - Python 3.11+
-- AWS Account with Bedrock access
-- AWS CLI configured
+- AWS Account (for production deployment)
+- Git
 
-## Quick Setup
+## Local Development (No AWS Required)
 
-### 1. Install Dependencies
+### 1. Clone and Setup
 
 ```bash
-# Create virtual environment
+git clone https://github.com/krishnadath18/Andhra-Kitchen-Agent.git
+cd Andhra-Kitchen-Agent
+
 python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# Activate (Windows)
-.venv\Scripts\activate
-
-# Activate (Linux/Mac)
-source .venv/bin/activate
-
-# Install packages
 pip install -r requirements.txt
 ```
 
-### 2. Configure Environment
+### 2. Run Mock Server
 
 ```bash
-# Copy template
-cp .env.template .env
+# Terminal 1: Start mock backend
+python local_server_mock.py
 
-# Edit .env with your AWS credentials
-# Minimum required:
-# - AWS_REGION=ap-south-1
-# - AWS_ACCOUNT_ID=your-account-id
-```
-
-### 3. Deploy Infrastructure (Optional for Local Testing)
-
-```bash
-cd infrastructure
-./scripts/deploy.sh
-cd ..
-```
-
-### 4. Run the Application
-
-```bash
+# Terminal 2: Start Streamlit
 streamlit run app.py
 ```
 
-The app will open at `http://localhost:8501`
+### 3. Access Application
 
-## First Steps
+Open browser to: http://localhost:8501
 
-### Try the Chat Interface
-1. Type: "What can I cook with tomatoes and rice?"
-2. Or click the microphone icon for voice input
+## AWS Deployment (Production)
 
-### Upload an Image
-1. Click "📷 Upload Image"
-2. Select a photo of your kitchen ingredients
-3. Review detected ingredients
-4. Generate recipes
+### 1. Configure AWS
 
-### Switch Languages
-- Use the sidebar to toggle between English and Telugu
-- All UI text updates automatically
-
-## What's Working
-
-✅ **Frontend**: Complete Streamlit UI with all features
-✅ **Backend**: All core tools and API endpoints
-✅ **AWS**: Infrastructure templates ready
-
-## What Needs Integration
-
-⏳ **API Gateway**: Configure CORS and rate limiting
-⏳ **Frontend-Backend**: Connect Streamlit to REST API
-⏳ **Lambda**: Deploy reminder executor
-
-## Development Mode
-
-For local development without AWS:
-
-```bash
-# Run with mock data
-export USE_MOCK_DATA=true
-streamlit run app.py
-```
-
-## Troubleshooting
-
-**Port already in use?**
-```bash
-streamlit run app.py --server.port 8502
-```
-
-**AWS credentials not found?**
 ```bash
 aws configure
+# Enter your AWS credentials
+# Region: ap-south-1 (Mumbai)
 ```
 
-**Module not found?**
+### 2. Enable Bedrock Models
+
+1. Go to AWS Console → Bedrock → Model access
+2. Enable: Claude 3 Haiku, Claude 3 Sonnet
+3. Wait for approval (usually instant)
+
+### 3. Deploy Infrastructure
+
 ```bash
-pip install -r requirements.txt
+# Copy environment template
+cp .env.template .env
+
+# Edit .env with your AWS details
+nano .env
+
+# Deploy secure infrastructure
+./infrastructure/scripts/deploy-api-gateway.sh
+```
+
+### 4. Verify Deployment
+
+```bash
+# Test API endpoint
+curl -X POST https://your-api-endpoint/chat \
+  -H "Content-Type: application/json" \
+  -d '{"session_id":"test","message":"Hello","language":"en"}'
 ```
 
 ## Next Steps
 
-- Read the full [README.md](README.md)
-- Check [docs/summaries/PROJECT_STATUS_SUMMARY.md](docs/summaries/PROJECT_STATUS_SUMMARY.md) for implementation status
-- Review [infrastructure/DEPLOYMENT_GUIDE.md](infrastructure/DEPLOYMENT_GUIDE.md) for AWS setup
-- See [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for project organization
+- 📖 Read [Full Documentation](docs/README.md)
+- 🔒 Review [Security Guide](docs/security/README.md)
+- 🏗️ Explore [Project Structure](docs/PROJECT_STRUCTURE.md)
+- 🤝 Check [Contributing Guidelines](CONTRIBUTING.md)
+
+## Troubleshooting
+
+**Issue**: Module not found
+```bash
+pip install -r requirements.txt
+```
+
+**Issue**: AWS credentials error
+```bash
+aws configure
+# Re-enter credentials
+```
+
+**Issue**: Bedrock access denied
+- Enable models in AWS Console → Bedrock → Model access
+
+**Issue**: Port already in use
+```bash
+streamlit run app.py --server.port 8502
+```
 
 ## Support
 
-- Documentation: See [docs/](docs/) directory
-- AWS Setup: See [infrastructure/DEPLOYMENT_GUIDE.md](infrastructure/DEPLOYMENT_GUIDE.md)
-- API Reference: See [infrastructure/API_DOCUMENTATION.md](infrastructure/API_DOCUMENTATION.md)
-
----
-
-**Ready to cook? Let's go! 🍛**
+- GitHub Issues: [Report a bug](https://github.com/krishnadath18/Andhra-Kitchen-Agent/issues)
+- Email: krishnadath10@gmail.com

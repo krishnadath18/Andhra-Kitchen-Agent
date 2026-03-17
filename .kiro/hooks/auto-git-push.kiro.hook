@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Auto Git Push",
+  "description": "Automatically commit and push changes to GitHub when files are saved",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.py",
+      "**/*.md",
+      "**/*.yaml",
+      "**/*.yml",
+      "**/*.json",
+      "**/*.sh",
+      "**/*.toml"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "git add . && git commit -m \"Auto-update: $(date +%Y-%m-%d\\ %H:%M:%S)\" && git push origin main"
+  }
+}

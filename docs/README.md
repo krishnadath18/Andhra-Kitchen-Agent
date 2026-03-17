@@ -1,134 +1,102 @@
-# Andhra Kitchen Agent - Documentation
+# Documentation
 
-Welcome to the Andhra Kitchen Agent documentation!
+Complete documentation for the Andhra Kitchen Agent project.
 
-## Quick Links
+## 📚 Documentation Structure
 
 ### Getting Started
-- [Main README](../README.md) - Project overview and installation
 - [Quick Start Guide](../QUICKSTART.md) - Get running in 5 minutes
-- [Contributing Guide](../CONTRIBUTING.md) - How to contribute
+- [Project Structure](PROJECT_STRUCTURE.md) - Codebase organization and architecture
+- [Contributing Guidelines](../CONTRIBUTING.md) - How to contribute to the project
 
-### Deployment
-- [Deployment Guide](../infrastructure/DEPLOYMENT_GUIDE.md) - Complete AWS deployment
-- [API Documentation](../infrastructure/API_DOCUMENTATION.md) - REST API reference
-- [Quick Deployment](../infrastructure/QUICK_START.md) - Fast deployment steps
-
-### Project Status
-- [Project Status](summaries/PROJECT_STATUS_SUMMARY.md) - Current implementation status
-- [MVP Summary](summaries/MVP_COMPLETE_SUMMARY.md) - MVP completion report
-- [Validation Report](validation/VALIDATION_REPORT.md) - Test results (99.7% pass rate)
+### Security
+- [Security Overview](security/README.md) - Comprehensive security documentation
+- [Deployment Guide](security/DEPLOYMENT.md) - Secure production deployment
+- [Security Audit](security/AUDIT.md) - Vulnerability assessment and findings
+- [Security Fixes](security/FIXES.md) - Implemented security controls
+- [Quick Reference](security/QUICK_REFERENCE.md) - Developer security guidelines
 
 ### Technical Documentation
-- [Project Structure](PROJECT_STRUCTURE.md) - Directory organization
-- [AgentCore Configuration](agentcore_configuration.md) - AgentCore setup
-- [Specifications](../.kiro/specs/andhra-kitchen-agent/) - Complete specs
+- [AgentCore Configuration](agentcore_configuration.md) - AWS Bedrock AgentCore setup
+- [API Documentation](../infrastructure/API_DOCUMENTATION.md) - REST API reference
+- [Infrastructure Guide](../infrastructure/README.md) - AWS infrastructure details
 
-## Documentation Structure
+## 🎯 Quick Navigation
 
-```
-docs/
-├── README.md                      # This file
-├── PROJECT_STRUCTURE.md           # Project organization guide
-├── agentcore_configuration.md     # AgentCore setup
-├── summaries/                     # Project summaries
-│   ├── PROJECT_STATUS_SUMMARY.md  # Implementation status
-│   ├── MVP_COMPLETE_SUMMARY.md    # MVP completion
-│   ├── DEPLOYMENT_COMPLETE_SUMMARY.md
-│   ├── INTEGRATION_COMPLETE_SUMMARY.md
-│   ├── FRONTEND_IMPLEMENTATION_SUMMARY.md
-│   └── DOCUMENTATION_UPDATE_SUMMARY.md
-└── validation/                    # Validation reports
-    ├── VALIDATION_REPORT.md       # Test results
-    └── FINAL_SYSTEM_VALIDATION.md # System validation
-```
+### By Role
 
-## Key Achievements
+**Developers**
+1. [Quick Start](../QUICKSTART.md)
+2. [Project Structure](PROJECT_STRUCTURE.md)
+3. [Security Quick Reference](security/QUICK_REFERENCE.md)
+4. [Contributing](../CONTRIBUTING.md)
 
-✅ **MVP Complete** - All core features implemented  
-✅ **99.7% Test Pass Rate** - 309/310 tests passing  
-✅ **100% Core Functionality** - All critical systems working  
-✅ **Deployment Ready** - Infrastructure and scripts ready  
-✅ **Complete Documentation** - Comprehensive guides available
+**DevOps Engineers**
+1. [Deployment Guide](security/DEPLOYMENT.md)
+2. [Infrastructure Guide](../infrastructure/README.md)
+3. [Security Overview](security/README.md)
 
-## What's Implemented
+**Security Team**
+1. [Security Audit](security/AUDIT.md)
+2. [Security Fixes](security/FIXES.md)
+3. [Deployment Guide](security/DEPLOYMENT.md)
 
-### Backend (100%)
-- Kitchen Agent Core with session management
-- Vision Analyzer (Claude 3 Sonnet)
-- Recipe Generator (Claude 3 Haiku)
-- Shopping Optimizer with market prices
-- Reminder Service with EventBridge
-- AgentCore Orchestrator
-- All 10 REST API endpoints
+**Project Managers**
+1. [README](../README.md)
+2. [Security Overview](security/README.md)
+3. [Project Structure](PROJECT_STRUCTURE.md)
 
-### Frontend (100%)
-- Streamlit UI with mobile responsiveness
-- Chat interface with auto-scroll
-- Voice input (Web Speech API)
-- Image upload with validation
-- Recipe cards with selection
-- Shopping list with checkboxes
-- Reminders with dismiss/snooze
-- English/Telugu language toggle
+### By Task
 
-### Infrastructure (100%)
-- DynamoDB tables (sessions, prices, reminders)
-- S3 bucket with lifecycle policies
-- Lambda functions with IAM roles
-- API Gateway with rate limiting and CORS
-- CloudFormation templates
-- Deployment scripts
+**Setting Up Development Environment**
+→ [Quick Start](../QUICKSTART.md) → [Project Structure](PROJECT_STRUCTURE.md)
 
-### Documentation (100%)
-- README and Quick Start
-- Deployment guides
-- API documentation
-- Validation reports
-- Contributing guidelines
+**Deploying to Production**
+→ [Deployment Guide](security/DEPLOYMENT.md) → [Infrastructure Guide](../infrastructure/README.md)
 
-## What's Optional
+**Implementing Security**
+→ [Security Quick Reference](security/QUICK_REFERENCE.md) → [Security Overview](security/README.md)
 
-These features are marked optional for MVP:
-- Festival Mode (4 tasks)
-- Property-based tests (50+ tests)
-- Performance load testing
-- Manual usability testing
+**Contributing Code**
+→ [Contributing Guidelines](../CONTRIBUTING.md) → [Project Structure](PROJECT_STRUCTURE.md)
 
-## For Different Audiences
+**Configuring AWS Services**
+→ [AgentCore Configuration](agentcore_configuration.md) → [Infrastructure Guide](../infrastructure/README.md)
 
-### New Users
-1. Read [Main README](../README.md) for overview
-2. Follow [Quick Start](../QUICKSTART.md) to get running
-3. Check [Project Status](summaries/PROJECT_STATUS_SUMMARY.md) for what's available
+## 📖 Documentation Standards
 
-### Developers
-1. Read [Contributing Guide](../CONTRIBUTING.md)
-2. Review [Project Structure](PROJECT_STRUCTURE.md)
-3. Check [Specifications](../.kiro/specs/andhra-kitchen-agent/)
-4. See [Project Status](summaries/PROJECT_STATUS_SUMMARY.md) for tasks
+All documentation follows these principles:
 
-### DevOps Engineers
-1. Read [Deployment Guide](../infrastructure/DEPLOYMENT_GUIDE.md)
-2. Use deployment scripts in `infrastructure/scripts/`
-3. Follow [Deployment Checklist](../infrastructure/DEPLOYMENT_CHECKLIST.md)
-4. Review [API Documentation](../infrastructure/API_DOCUMENTATION.md)
+- **Clear and Concise**: Easy to understand for all skill levels
+- **Up-to-Date**: Synchronized with code changes
+- **Actionable**: Includes practical examples and commands
+- **Comprehensive**: Covers all aspects of the project
+- **Professional**: Well-structured and properly formatted
 
-### QA/Testers
-1. Check [Validation Report](validation/VALIDATION_REPORT.md)
-2. Review [System Validation](validation/FINAL_SYSTEM_VALIDATION.md)
-3. Run tests: `pytest tests/`
-4. See test coverage in validation reports
+## 🔍 Finding Information
 
-## Support
+**Search Tips:**
+- Use GitHub's search: Press `/` and type your query
+- Check the relevant section based on your role
+- Review related documentation links
+- Open an issue if documentation is unclear
 
-For questions and issues:
-- Check documentation in this directory
-- Review [infrastructure/](../infrastructure/) for deployment help
-- See [.kiro/specs/](../.kiro/specs/andhra-kitchen-agent/) for specifications
+## 📝 Improving Documentation
+
+Found an issue or want to improve documentation?
+
+1. Check [Contributing Guidelines](../CONTRIBUTING.md)
+2. Create an issue or pull request
+3. Follow documentation standards
+4. Include examples and diagrams
+
+## 🆘 Getting Help
+
+- **Questions**: [GitHub Discussions](https://github.com/krishnadath18/Andhra-Kitchen-Agent/discussions)
+- **Issues**: [GitHub Issues](https://github.com/krishnadath18/Andhra-Kitchen-Agent/issues)
+- **Email**: krishnadath10@gmail.com
 
 ---
 
-**Documentation Version**: 1.0.0  
-**Last Updated**: March 2026  
-**Status**: Complete and up-to-date
+**Last Updated**: 2026-03-17  
+**Version**: 1.0
