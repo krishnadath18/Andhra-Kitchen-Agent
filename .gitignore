@@ -61,6 +61,6 @@ bucket-policy.json
 # Kiro
 .kiro/settings/mcp.json
 
-# Temporary files
-*.tmp
-*.bak
+# Backups
+backups/
+*.old.py

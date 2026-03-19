@@ -28,30 +28,34 @@ Andhra Kitchen Agent is an intelligent culinary assistant that leverages AWS Bed
 ## Architecture
 
 ```
-┌─────────────────┐
-│   Streamlit UI  │
-│  (Frontend)     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  API Gateway    │
-│  + Lambda       │
-└────────┬────────┘
-         │
-         ├──────────────┬──────────────┬──────────────┐
-         ▼              ▼              ▼              ▼
-    ┌────────┐    ┌─────────┐   ┌──────────┐   ┌──────────┐
-    │Bedrock │    │DynamoDB │   │    S3    │   │EventBridge│
-    │Claude 3│    │Sessions │   │  Images  │   │ Reminders │
-    └────────┘    └─────────┘   └──────────┘   └──────────┘
+┌─────────────────────────────────────┐
+│   Streamlit UI (Modular Frontend)   │
+│   ├── components.py (UI rendering)  │
+│   ├── handlers.py (API integration) │
+│   ├── state.py (session mgmt)       │
+│   ├── styles.py (Andhra aesthetic)  │
+│   └── translations.py (EN/TE)       │
+└────────────────┬────────────────────┘
+                 │
+                 ▼
+         ┌─────────────────┐
+         │  API Gateway    │
+         │  + Lambda       │
+         └────────┬────────┘
+                  │
+         ├────────┴────────┬──────────────┬──────────────┐
+         ▼                 ▼              ▼              ▼
+    ┌────────┐        ┌─────────┐   ┌──────────┐   ┌──────────┐
+    │Bedrock │        │DynamoDB │   │    S3    │   │EventBridge│
+    │Claude 3│        │Sessions │   │  Images  │   │ Reminders │
+    └────────┘        └─────────┘   └──────────┘   └──────────┘
 ```
 
 ### Technology Stack
 
 - **AI/ML**: AWS Bedrock (Claude 3 Haiku, Claude 3 Sonnet)
 - **Backend**: Python 3.11+, AWS Lambda
-- **Frontend**: Streamlit
+- **Frontend**: Streamlit (modular architecture with warm Andhra aesthetic)
 - **Database**: Amazon DynamoDB
 - **Storage**: Amazon S3
 - **Scheduling**: Amazon EventBridge
@@ -131,6 +135,8 @@ For production deployment with all security features:
 ### Getting Started
 - [Quick Start Guide](QUICKSTART.md) - Get running in 5 minutes
 - [Project Structure](docs/PROJECT_STRUCTURE.md) - Codebase organization
+- [UI Refactoring Summary](REFACTORING_SUMMARY.md) - Modular frontend architecture
+- [Docker Setup Guide](DOCKER_SETUP.md) - Docker development environment
 - [Contributing Guidelines](CONTRIBUTING.md) - How to contribute
 
 ### Security
@@ -146,6 +152,15 @@ For production deployment with all security features:
 - [Infrastructure Guide](infrastructure/README.md) - AWS infrastructure details
 
 ## Features in Detail
+
+### Modern UI Design
+
+Beautiful, culturally-authentic interface featuring:
+- **Warm Andhra Aesthetic** - Traditional color palette (cream, tamarind, turmeric, saffron)
+- **Custom Typography** - Playfair Display, Lora, and Noto Sans Telugu fonts
+- **Bilingual Support** - Seamless English ↔ Telugu switching
+- **Responsive Design** - Mobile-optimized layouts
+- **Modular Architecture** - Clean separation of concerns for maintainability
 
 ### Recipe Generation
 
@@ -233,6 +248,18 @@ Designed for AWS Free Tier compliance:
 > ⚠️ **IMPORTANT**: AWS Bedrock is **NOT included in the AWS Free Tier**. Bedrock charges per token (input/output) and can incur significant costs depending on usage. Claude 3 Haiku is the most cost-effective model, but monitor your usage carefully. See [AWS Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/) for details.
 
 **Estimated Monthly Cost**: $5-10 beyond free tier (primarily Bedrock usage)
+
+## Recent Updates
+
+### December 2024 - UI Refactoring
+- ✅ Refactored monolithic `app.py` (1375 lines → 150 lines, 89% reduction)
+- ✅ Created modular UI architecture with 5 specialized modules
+- ✅ Implemented warm Andhra aesthetic design system
+- ✅ Enhanced bilingual support (English/Telugu)
+- ✅ Improved code maintainability and testability
+- ✅ Preserved all security features and functionality
+
+See [REFACTORING_SUMMARY.md](REFACTORING_SUMMARY.md) for details.
 
 ## Roadmap
 

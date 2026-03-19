@@ -101,26 +101,40 @@ andhra-kitchen-agent/
 │   ├── test_*.py              # Unit and integration tests
 │   └── __init__.py
 │
+├── ui/                         # Frontend UI modules (refactored)
+│   ├── components.py          # UI rendering components
+│   ├── handlers.py            # Event handlers and API integration
+│   ├── state.py               # Session state management
+│   ├── styles.py              # CSS styles (warm Andhra aesthetic)
+│   └── translations.py        # Bilingual text (English/Telugu)
+│
+├── backups/                    # Backup files
+│   └── app_old.py             # Original monolithic app.py
+│
 ├── .env.template               # Environment variables template
 ├── .gitignore                 # Git ignore rules
 ├── AGENTS.md                  # Security guidelines
-├── app.py                     # Streamlit frontend application
+├── app.py                     # Streamlit frontend (refactored, modular)
 ├── CONTRIBUTING.md            # Contribution guidelines
+├── DOCKER_SETUP.md            # Docker setup guide
 ├── QUICKSTART.md             # Quick start guide
 ├── README.md                 # Main project documentation
+├── REFACTORING_SUMMARY.md    # UI refactoring documentation
 └── requirements.txt          # Python dependencies
 ```
 
 ## Key Files
 
 ### Root Level
-- **app.py** - Streamlit frontend application (main entry point)
+- **app.py** - Streamlit frontend application (main entry point, refactored to 150 lines)
 - **requirements.txt** - Python package dependencies
 - **.env.template** - Template for environment configuration
 - **README.md** - Project overview and setup instructions
 - **QUICKSTART.md** - 5-minute quick start guide
 - **CONTRIBUTING.md** - Developer contribution guidelines
 - **AGENTS.md** - Security guidelines and best practices
+- **DOCKER_SETUP.md** - Docker development environment guide
+- **REFACTORING_SUMMARY.md** - UI refactoring documentation
 
 ### Source Code (`src/`)
 - **kitchen_agent_core.py** - Main orchestrator coordinating all components
@@ -132,6 +146,13 @@ andhra-kitchen-agent/
 - **api_client.py** - Frontend API client with error handling
 - **api_handler.py** - Backend API request handlers
 - **validators.py** - JSON schema validation utilities
+
+### UI Modules (`ui/`)
+- **components.py** - All UI rendering functions (login, navbar, tabs)
+- **handlers.py** - Event handlers, API integration, and data processing
+- **state.py** - Session state initialization and authentication management
+- **styles.py** - Complete CSS stylesheet with warm Andhra aesthetic
+- **translations.py** - Bilingual UI text (English/Telugu)
 
 ### Infrastructure (`infrastructure/`)
 - **cloudformation/api-gateway-fixed.yaml** - SECURE: Unified API Gateway with all security fixes
@@ -192,6 +213,7 @@ andhra-kitchen-agent/
 - `__pycache__/` - Python bytecode cache
 - `.pytest_cache/` - Pytest cache
 - `.kiro/settings/mcp.json` - Local MCP configuration
+- `backups/` - Backup files (including app_old.py)
 - AWS credentials and secrets
 
 ### Deprecated/Removed Files
@@ -200,6 +222,15 @@ The following files were removed during cleanup:
 - `validate_*.py` in root (deprecated, tests cover validation)
 - `add_methods.py` (temporary development file)
 - `ESSENTIAL_FILES.md` (outdated)
+- `IMPROVEMENTS_SUMMARY.md` (empty file, removed)
+- `EXTERNAL_SECURITY_AUDIT_REPORT.md` (empty file, removed)
+
+### Refactored Files
+The following files were refactored for better maintainability:
+- **app.py** - Reduced from 1375 lines to 150 lines (89% reduction)
+  - Original backed up to `backups/app_old.py`
+  - Functionality split into modular `ui/` components
+  - Maintains 100% feature parity with improved code organization
 
 ## Quick Navigation
 
