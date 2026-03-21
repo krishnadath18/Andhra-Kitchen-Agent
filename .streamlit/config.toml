@@ -5,8 +5,9 @@
 # SECURITY: Enable XSRF protection to prevent cross-site request forgery
 enableXsrfProtection = true
 
-# SECURITY: Disable CORS in production (API handles CORS)
-enableCORS = false
+# SECURITY: CORS is auto-enabled when XSRF protection is on (required for cookies)
+# The API backend handles CORS headers, but Streamlit needs it for session cookies
+# enableCORS = false  # Commented out - conflicts with XSRF protection
 
 # SECURITY: Set cookie secret for session management
 # WARNING: Generate a secure random string for production

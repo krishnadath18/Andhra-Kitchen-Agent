@@ -32,7 +32,20 @@ class AuthContext:
 def require_authenticated_user(event: Dict[str, Any]) -> AuthContext:
     """
     Resolve the authenticated user from API Gateway claims or a bearer token.
+    In mock auth mode, returns a mock user context.
     """
+    # Mock authentication bypass for local development
+    if Config.USE_MOCK_AUTH:
+        return AuthContext(
+            sub="mock_user_sub_12345",
+            email="mock@example.com",
+            claims={
+                "sub": "mock_user_sub_12345",
+                "email": "mock@example.com",
+                "cognito:username": "mockuser"
+            }
+        )
+    
     claims = _extract_event_claims(event)
     if claims is None:
         token = _extract_bearer_token(event)

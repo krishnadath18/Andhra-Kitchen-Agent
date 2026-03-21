@@ -10,21 +10,21 @@ def get_global_styles() -> str:
 <style>
 /* ── TOKENS ── */
 :root {
-    --ink:        #1E1208;
-    --bark:       #3A200E;
-    --tamarind:   #4E2408;
-    --clay:       #7A3E14;
-    --turmeric:   #B87010;
-    --saffron:    #D89020;
-    --gold:       #EAB840;
-    --cream:      #FBF3E0;
-    --parchment:  #F5E8C8;
-    --warm-off:   #F8F0DC;
-    --border:     #D8C090;
-    --border-sm:  #EAD8B0;
-    --leaf:       #285010;
-    --chilli:     #A01808;
-    --shadow:     rgba(30,18,8,0.13);
+    --ink:        #1a1a1a;
+    --bark:       #2d2d2d;
+    --tamarind:   #3a3a3a;
+    --clay:       #666666;
+    --turmeric:   #4a90e2;
+    --saffron:    #5ba3f5;
+    --gold:       #4a90e2;
+    --cream:      #ffffff;
+    --parchment:  #f5f5f5;
+    --warm-off:   #fafafa;
+    --border:     #e0e0e0;
+    --border-sm:  #eeeeee;
+    --leaf:       #4caf50;
+    --chilli:     #f44336;
+    --shadow:     rgba(0,0,0,0.1);
 }
 
 /* ── RESET STREAMLIT CHROME ── */
@@ -32,14 +32,13 @@ def get_global_styles() -> str:
 
 .stApp {
     background: var(--cream);
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='6' height='6' fill='%23FBF3E0'/%3E%3Cpath d='M0 3h6M3 0v6' stroke='%23D8C090' stroke-width='0.3' opacity='0.35'/%3E%3C/svg%3E");
     font-family: 'Lora', Georgia, serif;
 }
 
 /* ── SIDEBAR ── */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, var(--tamarind) 0%, var(--bark) 100%) !important;
-    border-right: 2px solid var(--turmeric) !important;
+    background: var(--bark) !important;
+    border-right: 1px solid var(--border) !important;
 }
 
 [data-testid="stSidebar"] > div:first-child {
@@ -53,7 +52,7 @@ def get_global_styles() -> str:
 [data-testid="stSidebar"] span,
 [data-testid="stSidebar"] label,
 [data-testid="stSidebar"] div {
-    color: rgba(251,243,224,0.65) !important;
+    color: rgba(255,255,255,0.8) !important;
     font-family: 'Lora', serif !important;
 }
 
@@ -144,9 +143,9 @@ def get_global_styles() -> str:
 }
 
 .av-ai {
-    background: radial-gradient(circle at 38% 35%, var(--saffron), #5A2808);
-    border: 1px solid rgba(234,184,64,0.25);
-    box-shadow: 0 0 10px rgba(184,112,16,0.25);
+    background: var(--turmeric);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 10px rgba(74,144,226,0.25);
 }
 
 .av-user { background: var(--parchment); border: 1px solid var(--border-sm); }
@@ -216,12 +215,12 @@ def get_global_styles() -> str:
 
 .wlc-orb {
     width: 66px; height: 66px;
-    background: radial-gradient(circle at 38% 35%, var(--saffron), #5A2808);
+    background: var(--turmeric);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 30px; margin: 0 auto 1.25rem;
-    border: 2px solid rgba(234,184,64,0.3);
-    box-shadow: 0 0 28px rgba(184,112,16,0.3);
+    border: 2px solid var(--border);
+    box-shadow: 0 0 28px rgba(74,144,226,0.2);
 }
 
 .wlc-namaste {
@@ -291,13 +290,13 @@ div[data-testid="column"]:last-child .stButton button {
     background: var(--turmeric) !important;
     border: none !important;
     border-radius: 10px !important;
-    color: var(--cream) !important;
+    color: white !important;
     font-family: 'Lora', serif !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
     width: 100% !important;
     height: 52px !important;
-    box-shadow: 0 3px 12px rgba(184,112,16,0.35) !important;
+    box-shadow: 0 3px 12px rgba(74,144,226,0.35) !important;
     transition: background 0.15s !important;
 }
 

@@ -64,3 +64,4 @@ bucket-policy.json
 # Backups
 backups/
 *.old.py
+app_fixed.py

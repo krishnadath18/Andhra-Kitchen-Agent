@@ -19,6 +19,17 @@ logger = logging.getLogger(__name__)
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 # ============================================================================
+# PAGE CONFIG - MUST BE FIRST
+# ============================================================================
+
+st.set_page_config(
+    page_title="Andhra Kitchen Agent",
+    page_icon="🍛",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+# ============================================================================
 # SECURITY: HTTPS ENFORCEMENT
 # ============================================================================
 
@@ -62,17 +73,6 @@ def check_https_security():
 check_https_security()
 
 # ============================================================================
-# PAGE CONFIG
-# ============================================================================
-
-st.set_page_config(
-    page_title="Andhra Kitchen Agent",
-    page_icon="🍛",
-    layout="wide",
-    initial_sidebar_state="collapsed",
-)
-
-# ============================================================================
 # IMPORT UI MODULES
 # ============================================================================
 
@@ -89,17 +89,15 @@ from ui.components import (
 )
 
 # ============================================================================
-# APPLY STYLES
-# ============================================================================
-
-st.markdown(get_global_styles(), unsafe_allow_html=True)
-
-# ============================================================================
 # MAIN APPLICATION
 # ============================================================================
 
 def main():
     """Main application entry point."""
+    # Apply styles using components.html (guaranteed to work)
+    import streamlit.components.v1 as components
+    components.html(get_global_styles(), height=0)
+    
     initialize_session_state()
     
     # Authentication gate

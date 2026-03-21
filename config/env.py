@@ -29,6 +29,7 @@ class Config:
     COGNITO_REGION: str = os.getenv("COGNITO_REGION", os.getenv("AWS_REGION", "ap-south-1"))
     COGNITO_USER_POOL_ID: str = os.getenv("COGNITO_USER_POOL_ID", "")
     COGNITO_APP_CLIENT_ID: str = os.getenv("COGNITO_APP_CLIENT_ID", "")
+    USE_MOCK_AUTH: bool = os.getenv("USE_MOCK_AUTH", "False").lower() == "true"
     
     # DynamoDB Tables
     SESSIONS_TABLE: str = os.getenv("SESSIONS_TABLE", "kitchen-agent-sessions-dev")
@@ -305,6 +306,7 @@ if env_file_path.exists():
     load_env_file()
     Config.ENVIRONMENT = os.getenv("ENVIRONMENT", Config.ENVIRONMENT)
     Config.ALLOWED_ORIGIN = os.getenv("ALLOWED_ORIGIN", Config.ALLOWED_ORIGIN)
+    Config.USE_MOCK_AUTH = os.getenv("USE_MOCK_AUTH", "False").lower() == "true"
     Config.REQUIRE_HTTPS = os.getenv(
         "REQUIRE_HTTPS",
         "true" if Config.ENVIRONMENT == "prod" else str(Config.REQUIRE_HTTPS)

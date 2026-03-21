@@ -1,5 +1,6 @@
 """
 Simple Cognito authentication client for the Streamlit frontend.
+Supports mock authentication for local development.
 """
 
 from __future__ import annotations
@@ -14,6 +15,37 @@ from config.env import Config
 
 class AuthClientError(Exception):
     """Raised when Cognito authentication fails."""
+
+
+class MockAuthClient:
+    """Mock authentication client for local development."""
+    
+    def sign_in(self, email: str, password: str) -> Dict[str, Any]:
+        """Mock sign-in that accepts any credentials."""
+        # Accept any email/password for local testing
+        token_expires_at = datetime.now(timezone.utc) + timedelta(hours=1)
+        
+        return {
+            'id_token': 'mock_id_token_' + email,
+            'access_token': 'mock_access_token_' + email,
+            'refresh_token': 'mock_refresh_token_' + email,
+            'token_expires_at': token_expires_at.isoformat(),
+        }
+    
+    def refresh_tokens(self, refresh_token: str) -> Dict[str, Any]:
+        """Mock token refresh."""
+        token_expires_at = datetime.now(timezone.utc) + timedelta(hours=1)
+        
+        return {
+            'id_token': 'mock_id_token_refreshed',
+            'access_token': 'mock_access_token_refreshed',
+            'refresh_token': refresh_token,
+            'token_expires_at': token_expires_at.isoformat(),
+        }
+    
+    def logout(self, access_token: str) -> None:
+        """Mock logout (no-op)."""
+        pass
 
 
 class AuthClient:
@@ -77,4 +109,8 @@ class AuthClient:
         }
 
 
-auth_client = AuthClient()
+# Use mock auth client if configured, otherwise use real Cognito
+if Config.USE_MOCK_AUTH:
+    auth_client = MockAuthClient()
+else:
+    auth_client = AuthClient()
